@@ -6,7 +6,6 @@ let perPage = 20;
 let firstGen = 151;
 
 function fetchPokemons(page, perPage) {
-    console.log(page);
 let nextTotal = page * perPage;
 let nextLimit = Math.min(20, firstGen - nextTotal);
 return fetch(`https://pokeapi.co/api/v2/pokemon?limit=${nextLimit}&offset=${nextTotal}`)
@@ -17,13 +16,18 @@ return response.json();
 return data.results;
 })
 }
+function fetchPokemon(id) {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    .then(function (res){
+        return res.json();
+    });
+}
 
 function createPokemonsLoadingMarkup(){
 return `
     <h3>Loading Pokemons...</h3>
 `;
 }
-
 function createHomeMarkup () {
 return ` 
 <h1>My Pokedex</h1>
@@ -45,7 +49,6 @@ return `
 function createPokedexMarkup(pokemons){
 let pokemonList = pokemons
     .map(creatPokemonCard).join("");
-
     return `
         <h1>My Pokemons</h1>
         <button id="prevButton">Prev</button>
@@ -65,10 +68,7 @@ return `
 }
 
 function renderPokemon(pokemonid){
-
-
 fetchPokemon(pokemonid)
-
 .then(function (pokemon){
     let typeItems = pokemon.types.map(function (type){
         return `<span>${type.type.name}</span>`;
@@ -83,6 +83,7 @@ fetchPokemon(pokemonid)
             <li>${stats.stat.name}: ${stats.base_stat}</li>
         `;
     }).join("");
+
     mainNode.innerHTML = `
         <h1>${pokemon.name}</h1>
         <button id="back">Back</button>

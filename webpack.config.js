@@ -8,7 +8,7 @@ module.exports = {
     },
     devServer: {
         publicPath: '/',
-        contentBase: resolve(__dirname, 'dist'),
+        contentBase: path.resolve(__dirname, 'dist'),
         host: 'localhost',
         port: 3000,
     },
