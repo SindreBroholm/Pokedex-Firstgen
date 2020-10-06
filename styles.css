@@ -1,0 +1,25 @@
+#pokemonList {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+}
+.pokemonCard {
+    min-height: 100px;
+    min-width: 100px;
+    padding: 10px;
+    border: 1px dashed black;
+    margin: 5px;
+    display: grid;
+    grid-template-rows: 1.5fr 0.5fr;
+    align-content: center;
+    justify-content: center;
+}
+.pokemonCard > img {
+    align-self: center;
+    justify-self: center;
+}
+.pokemonCard > h3 {
+    align-self: center;
+    justify-self: center;
+}
