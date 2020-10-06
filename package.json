@@ -1,0 +1,21 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "\"my first pokedex\"\u001b[D in javascript\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Sindre Broholm Sæther",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.5.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-jest": "^26.5.0"
+  }
+}

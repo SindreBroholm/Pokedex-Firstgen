@@ -1,0 +1,16 @@
+const path = require('path')
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename: 'bundel.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
+    devServer: {
+        publicPath: '/',
+        contentBase: resolve(__dirname, 'dist'),
+        host: 'localhost',
+        port: 3000,
+    },
+    devtool: 'inline-source-map'
+};
